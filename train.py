@@ -29,15 +29,15 @@ print("y_train.shape:", y_train.shape)
 print("y_test.shape:", y_test.shape)
 
 model = get_model_emotions(vocab_size, sequence_length=sequence_length, embedding_size=embedding_size)
-model.load_weights("/Users/chitti/Desktop/rapid_emotion/emotion-recognition-using-text/results/model_v1_0.68_0.74.h5")
-model.compile(loss="categorical_crossentropy", optimizer="rmsprop", metrics=["accuracy"])
+# model.load_weights("/Users/chitti/Desktop/rapid_emotion/emotion-recognition-using-text/results/model_v1_0.68_0.74.h5")
+# model.compile(loss="categorical_crossentropy", optimizer="rmsprop", metrics=["accuracy"])
 
-if not os.path.isdir("results"):
-    os.mkdir("results")
+# if not os.path.isdir("results"):
+#     os.mkdir("results")
 
-checkpointer = ModelCheckpoint("/Users/chitti/Desktop/rapid_emotion/emotion-recognition-using-text/results/model_v1_{val_loss:.2f}_{val_acc:.2f}.h5", save_best_only=True, verbose=1)
+# checkpointer = ModelCheckpoint("/Users/chitti/Desktop/rapid_emotion/emotion-recognition-using-text/results/model_v1_{val_loss:.2f}_{val_acc:.2f}.h5", save_best_only=True, verbose=1)
 
-model.fit(X_train, y_train, epochs=epochs,
-            validation_data=(X_test, y_test),
-            batch_size=batch_size,
-            callbacks=[checkpointer])
+# model.fit(X_train, y_train, epochs=epochs,
+#             validation_data=(X_test, y_test),
+#             batch_size=batch_size,
+#             callbacks=[checkpointer])
