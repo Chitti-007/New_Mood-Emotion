@@ -73,10 +73,10 @@ with sr.Microphone() as source:
     audio = r.listen(source)
 
 print("Loading vocab2int")
-vocab2int = pickle.load(open("data/vocab2int.pickle", "rb"))
+vocab2int = pickle.load(open("Mood:Emotion Code/data/vocab2int.pickle", "rb"))
 
 model = get_model_emotions(len(vocab2int), sequence_length=sequence_length, embedding_size=embedding_size)
-model.load_weights("results/model_v1_0.68_0.74.h5")
+model.load_weights("Mood:Emotion Code/results/model_v1_0.68_0.74.h5")
 
 if __name__ == "__main__":
     import argparse

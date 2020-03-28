@@ -31,12 +31,12 @@ def read_text_file(filename):
 
 
 def load_emotion_data():
-    df = pd.read_csv("data/text_emotion.csv")
-    additional_anger = read_text_file("data/anger.txt")
-    # additional_happy = read_text_file("data/happy.txt")
-    # additional_sadness = read_text_file("data/sadness.txt")
-    # additional_files = [additional_anger, additional_happy, additional_sadness]
+    df = pd.read_csv("Mood:Emotion Code/data/text_emotion.csv")
+    additional_anger = read_text_file("Mood:Emotion Code/data/anger.txt")
+    # additional_happy = read_text_file("Mood:Emotion Code/data/happy.txt")
+    # additional_sadness = read_text_file("Mood:Emotion Code/data/sadness.txt")
     additional_files = [additional_anger]
+    #additional_files = [additional_anger]
     print(df.head())
     print(df.tail())
 
@@ -82,10 +82,10 @@ def load_emotion_data():
     vocab = { k:v for k, v in vocab.items() if v >= N }
 
     # word to integer encoder dict
-    vocab2int = {word: i for i, word in enumerate(vocab, start=1)}
+    vocab2int = {word: i for i, word in enumerate(vocab, start=0)}
 
     print("Pickling vocab2int...")
-    pickle.dump(vocab2int, open("data/vocab2int.pickle", "wb"))
+    pickle.dump(vocab2int, open("Mood:Emotion Code/data/vocab2int.pickle", "wb"))
 
     # encoded reviews
     for i in tqdm.tqdm(range(X.shape[0]), "Tokenizing words"):
