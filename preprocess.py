@@ -32,10 +32,10 @@ def read_text_file(filename):
 
 def load_emotion_data():
     df = pd.read_csv("Mood:Emotion Code/data/text_emotion.csv")
-    additional_anger = read_text_file("Mood:Emotion Code/data/anger.txt")
+    #additional_anger = read_text_file("Mood:Emotion Code/data/anger.txt")
     # additional_happy = read_text_file("Mood:Emotion Code/data/happy.txt")
-    # additional_sadness = read_text_file("Mood:Emotion Code/data/sadness.txt")
-    additional_files = [additional_anger]
+    additional_sadness = read_text_file("Mood:Emotion Code/data/sadness.txt")
+    additional_files = [additional_sadness]
     #additional_files = [additional_anger]
     print(df.head())
     print(df.tail())

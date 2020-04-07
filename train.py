@@ -35,7 +35,7 @@ print("y_train.shape:", y_train.shape)
 print("y_test.shape:", y_test.shape)
 
 model = get_model_emotions(vocab_size, sequence_length=sequence_length, embedding_size=embedding_size)
-model.load_weights("Mood:Emotion Code/results/model_v1_0.68_0.73.h5")
+model.load_weights("results/model_v1_0.68_0.73.h5")
 model.compile(loss="categorical_crossentropy", optimizer="rmsprop", metrics=["accuracy"])
 
 if not os.path.isdir("results"):
